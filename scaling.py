@@ -73,7 +73,7 @@ plt.plot(xargs, capargs, color="gray", linestyle="--")
 
 
 plt.xlabel(r"Characteristic height $\left(H^*\right)$ [mm]", fontsize=fontsize)
-plt.ylabel(r"Critical height $\left(h_{\textrm{crit}}\right)$ [mm]", fontsize=fontsize)
+plt.ylabel(r"Critical height $\left(H_{\textrm{crit}}\right)$ [mm]", fontsize=fontsize)
 plt.xticks(fontsize=fontsize)
 plt.yticks(fontsize=fontsize)
 plt.legend(fontsize=fontsize, frameon=False)

@@ -54,6 +54,7 @@ plt.errorbar(
     xerr=disk6[:, 1],
     yerr=disk6[:, 3],
     fmt="s",
+    ms=7,
     color="#d39400",
     label=r"Disk radius $R = 6$ cm",
 )

@@ -120,9 +120,9 @@ def give_re_fr_sigma(triple_to_give):
     return froude_val, froude_uncer, reynolds_val, reynolds_uncer
 
 
-fontsize = 23
+fontsize = 11.5 * 1.5
 
-plt.figure(figsize=(12, 5.5))
+plt.figure(figsize=(11, 5.5))
 plt.rcParams.update({"text.usetex": True, "font.family": "Cambria"})
 
 floating_data = give_re_fr_sigma(floating)
@@ -156,7 +156,8 @@ oscilates = plt.errorbar(
     oscilating_data[2],
     xerr=oscilating_data[1],
     yerr=oscilating_data[3],
-    fmt="o",
+    fmt="s",
+    ms=6,
     color=tableau[2],
     label=r"Disk sinks by oscilations",
 )
@@ -169,7 +170,7 @@ predictions, = plt.plot(
     linestyle="--",
     linewidth=1.5,
     zorder=-1,
-    label=r"$\frac{\sqrt{8}}{\xi}\left(\frac{\textrm{Fr}}{\sqrt{\omega}} + \frac{\sqrt{\omega}}{\textrm{Fr}}\right)$",
+    label=r"$\frac{\sqrt{8}}{\xi}\left(\frac{\textrm{Fr}}{\omega} + \frac{\omega}{\textrm{Fr}}\right)$",
 )
 
 
@@ -179,7 +180,7 @@ legend2_handles = [predictions]
 legend1 = plt.legend(
     fontsize=fontsize,
     frameon=False,
-    loc=(0.45, 0.005),
+    loc=(0.6, 0.03),
     handles=legend1_handles,
 )
 legend2 = plt.legend(
@@ -193,23 +194,30 @@ plt.gca().add_artist(legend1)
 plt.gca().add_artist(legend2)
 
 
-plt.xlabel(r"$\left(\textrm{Fr}/\omega\right)$", fontsize=fontsize)
-plt.ylabel(r"$\left(\sqrt{\textrm{Re}}/\omega\right)$", fontsize=fontsize)
+plt.xlabel(r"$\textrm{Fr}/\omega$", fontsize=fontsize)
+plt.ylabel(r"$\sqrt{\textrm{Re}}/\omega$", fontsize=fontsize)
 plt.xticks(fontsize=fontsize)
 plt.yticks(fontsize=fontsize)
 plt.minorticks_on()
 plt.tick_params(which="both", top=True, right=True)
 
 plt.xlim(0.3, 2)
-plt.ylim(2, 29)
+plt.ylim(7, 29)
 
 plt.savefig(
     "graphs/froude_reynolds.pdf",
     bbox_inches="tight",
+    pad_inches=0.02,
 )
 plt.savefig(
     "graphs/froude_reynolds.png",
     bbox_inches="tight",
+    pad_inches=0.02,
+)
+plt.savefig(
+    "graphs/froude_reynolds.eps",
+    bbox_inches="tight",
+    pad_inches=0.02,
 )
 
 plt.show()

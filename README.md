@@ -5,7 +5,7 @@ by Jan Turczynowicz, Radost Waszkiewicz, Łukasz Gładczuk. Work was done in Fen
 
 
 This repository accompanies a publication. 
-You can find a preprint on [https://arxiv.org/abs/2312.13099](https://arxiv.org/abs/2312.13099).
+You can find it on [https://doi.org/10.1103/jwmb-pvyz](https://doi.org/10.1103/jwmb-pvyz).
 
 Abstract
 ========
